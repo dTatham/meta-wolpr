@@ -1,0 +1,83 @@
+From 0c6c2beccf6d010da0f8574baa4eaef99d17a334 Mon Sep 17 00:00:00 2001
+From: OpenEmbedded <oe.patch@oe>
+Date: Tue, 10 Jul 2018 21:01:52 +0000
+
+---
+ arch/arm/boot/dts/qcom-apq8064.dtsi | 28 ++++++++++++++--------------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/arch/arm/boot/dts/qcom-apq8064.dtsi b/arch/arm/boot/dts/qcom-apq8064.dtsi
+index f26613ffc9e7..04f75c805f04 100644
+--- a/arch/arm/boot/dts/qcom-apq8064.dtsi
++++ b/arch/arm/boot/dts/qcom-apq8064.dtsi
+@@ -1184,10 +1184,10 @@
+ 			interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
+ 			interrupt-names = "kgsl_3d0_irq";
+ 			clock-names =
+-			    "core_clk",
+-			    "iface_clk",
++			    "core",
++			    "iface",
+ 			    "mem_clk",
+-			    "mem_iface_clk";
++			    "mem_iface";
+ 			clocks =
+ 			    <&mmcc GFX3D_CLK>,
+ 			    <&mmcc GFX3D_AHB_CLK>,
+@@ -1292,9 +1292,9 @@
+ 				<&mmcc DSI1_BYTE_CLK>,
+ 				<&mmcc DSI_PIXEL_CLK>,
+ 				<&mmcc DSI1_ESC_CLK>;
+-			clock-names = "iface_clk", "bus_clk", "core_mmss_clk",
+-					"src_clk", "byte_clk", "pixel_clk",
+-					"core_clk";
++			clock-names = "iface", "bus", "core_mmss",
++					"src", "byte", "pixel",
++					"core";
+ 
+ 			assigned-clocks = <&mmcc DSI1_BYTE_SRC>,
+ 					<&mmcc DSI1_ESC_SRC>,
+@@ -1334,7 +1334,7 @@
+ 				<0x04700300 0x200>,
+ 				<0x04700500 0x5c>;
+ 			reg-names = "dsi_pll", "dsi_phy", "dsi_phy_regulator";
+-			clock-names = "iface_clk";
++			clock-names = "iface";
+ 			clocks = <&mmcc DSI_M_AHB_CLK>;
+ 		};
+ 
+@@ -1449,9 +1449,9 @@
+ 			clocks = <&mmcc HDMI_APP_CLK>,
+ 				 <&mmcc HDMI_M_AHB_CLK>,
+ 				 <&mmcc HDMI_S_AHB_CLK>;
+-			clock-names = "core_clk",
+-				      "master_iface_clk",
+-				      "slave_iface_clk";
++			clock-names = "core",
++				      "master_iface",
++				      "slave_iface";
+ 
+ 			phys = <&hdmi_phy>;
+ 			phy-names = "hdmi-phy";
+@@ -1482,7 +1482,7 @@
+ 				    "hdmi_pll";
+ 
+ 			clocks = <&mmcc HDMI_S_AHB_CLK>;
+-			clock-names = "slave_iface_clk";
++			clock-names = "slave_iface";
+ 			#phy-cells = <0>;
+ 		};
+ 
+@@ -1496,9 +1496,9 @@
+ 				 <&mmcc MDP_LUT_CLK>,
+ 				 <&mmcc HDMI_TV_CLK>,
+ 				 <&mmcc MDP_TV_CLK>;
+-			clock-names = "core_clk",
+-				      "iface_clk",
+-				      "bus_clk",
++			clock-names = "core",
++				      "iface",
++				      "bus",
+ 				      "lut_clk",
+ 				      "hdmi_clk",
+ 				      "tv_clk";

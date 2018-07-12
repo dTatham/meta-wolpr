@@ -1,0 +1,13 @@
+diff --git a/arch/arm/boot/dts/qcom-apq8064.dtsi b/arch/arm/boot/dts/qcom-apq8064.dtsi
+index 5341a39c0392..d735aefc1ba4 100644
+--- a/arch/arm/boot/dts/qcom-apq8064.dtsi
++++ b/arch/arm/boot/dts/qcom-apq8064.dtsi
+@@ -312,7 +312,7 @@
+ 			compatible = "qcom,scm-apq8064";
+ 
+ 			clocks = <&rpmcc RPM_DAYTONA_FABRIC_CLK>;
+-			clock-names = "core";
++			clock-names = "core", "bus", "iface";
+ 		};
+ 	};
+ 

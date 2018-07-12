@@ -1,0 +1,53 @@
+diff --git a/arch/arm/boot/dts/qcom-apq8064-asus-nexus7-flo.dts b/arch/arm/boot/dts/qcom-apq8064-asus-nexus7-flo.dts
+index a701d4bac320..443c0a125cfd 100644
+--- a/arch/arm/boot/dts/qcom-apq8064-asus-nexus7-flo.dts
++++ b/arch/arm/boot/dts/qcom-apq8064-asus-nexus7-flo.dts
+@@ -83,6 +83,14 @@
+ 					bias-pull-down;
+ 				};
+ 
++				/* iris_vddrfa */
++				s2 {
++					regulator-min-microvolt = <1300000>;
++					regulator-max-microvolt = <1300000>;
++					qcom,switch-mode-frequency = <1600000>;
++
++				};
++
+ 				/* msm otg HSUSB_VDDCX */
+ 				s3 {
+ 					regulator-min-microvolt = <500000>;
+@@ -110,6 +118,13 @@
+ 					qcom,switch-mode-frequency = <3200000>;
+ 				};
+ 
++				s8 {
++					regulator-min-microvolt = <2200000>;
++					regulator-max-microvolt = <2200000>;
++					qcom,switch-mode-frequency = <1600000>;
++
++				};
++
+ 				/* mipi_dsi.1-dsi1_pll_vdda */
+ 				l2 {
+ 					regulator-min-microvolt = <1200000>;
+@@ -198,6 +213,12 @@
+ 				lvs7 {
+ 					bias-pull-down;
+ 				};
++
++				ncp {
++					regulator-min-microvolt = <1800000>;
++					regulator-max-microvolt = <1800000>;
++					qcom,switch-mode-frequency = <1600000>;
++				};
+ 			};
+ 		};
+ 
+@@ -357,3 +378,6 @@
+ 		};
+ 	};
+ };
++&riva {
++	status = "okay";
++};
